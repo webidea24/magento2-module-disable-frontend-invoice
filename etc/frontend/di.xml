@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Sales\Block\Order\Link">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventLinkOutput"/>
+    </type>
+
+    <type name="Magento\Sales\Controller\AbstractController\Creditmemo">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+    <type name="Magento\Sales\Controller\AbstractController\PrintCreditmemo">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+    <type name="Magento\Sales\Controller\AbstractController\Invoice">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+    <type name="Magento\Sales\Controller\AbstractController\PrintInvoice">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+    <type name="Magento\Sales\Controller\AbstractController\Shipment">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+    <type name="Magento\Sales\Controller\AbstractController\PrintShipment">
+        <plugin name="wi24-disable-frontend-documents" type="Webidea24\DisableFrontendDocuments\Plugin\PreventController"/>
+    </type>
+
+    <type name="Webidea24\DisableFrontendDocuments\Plugin\PreventController">
+        <arguments>
+            <argument name="controllerList" xsi:type="array">
+                <item name="Magento\Sales\Controller\AbstractController\Creditmemo" xsi:type="string">creditmemos</item>
+                <item name="Magento\Sales\Controller\AbstractController\PrintCreditmemo" xsi:type="string">creditmemos</item>
+                <item name="Magento\Sales\Controller\AbstractController\Invoice" xsi:type="string">invoices</item>
+                <item name="Magento\Sales\Controller\AbstractController\PrintInvoice" xsi:type="string">invoices</item>
+                <item name="Magento\Sales\Controller\AbstractController\Shipment" xsi:type="string">shipments</item>
+                <item name="Magento\Sales\Controller\AbstractController\PrintShipment" xsi:type="string">shipments</item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
