@@ -13,7 +13,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "Webidea24\\DisableFrontendInvoice\\": ""
+            "Webidea24\\DisableFrontendDocuments\\": ""
         }
     }
 }
